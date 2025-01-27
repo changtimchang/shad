@@ -1,6 +1,7 @@
 'use client'
 
 import { AppSidebar } from '@/components/app-sidebar'
+import HomePage from '@/components/LatestData'
 import BomUpdatedAt from '@/components/bom-updataedat'
 import {
   Breadcrumb,
@@ -25,6 +26,7 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar'
 import { useEffect, useState } from 'react'
+import LatestDataComponent from '@/components/LatestData'
 
 
 
@@ -72,14 +74,14 @@ export default function Page() {
                   <CardTitle>BOM DATA</CardTitle>
                   {/* <CardDescription>Card Description</CardDescription> */}
                 </CardHeader>
-                <CardContent>
+                <CardContent className='text-overflow'>
                   {postCount !== null ? (
                     <p>There are <span className='text-2xl text-red-500'> {postCount} </span> datum in the database</p>
                   ) : (
                     <p>Loading...</p>
                   )}
                 </CardContent>
-                <CardFooter>
+                <CardFooter className='text-sm text-overflow'>
                  <BomUpdatedAt />
                 </CardFooter>
               </Card>
@@ -88,7 +90,7 @@ export default function Page() {
             <div className='aspect-video rounded-xl bg-muted/50'>3</div>
           </div>
           <div className='min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min'>
-            4
+            <LatestDataComponent />
           </div>
         </div>
       </SidebarInset>
